@@ -16,10 +16,11 @@ use std::io::prelude::*;
 use std::os::unix::fs::MetadataExt;
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
-use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
+use std::sync::atomic::{AtomicBool, Ordering};
 use std::time::Duration;
 
 use indexmap::IndexSet;
+use portable_atomic::AtomicU64;
 use serde::{Deserialize, Serialize};
 use static_assertions::const_assert;
 use xxhash_rust::xxh3::Xxh3;

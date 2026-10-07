@@ -189,7 +189,7 @@ pub(crate) fn delete_elements<T: ResultEntry + Sized + Send + Sync>(
 
     let delayed_sender = progress_sender.map(|e| DelayedSender::new(e.clone(), Duration::from_millis(200)));
 
-    let bytes_processed = Arc::new(std::sync::atomic::AtomicU64::new(0));
+    let bytes_processed = Arc::new(portable_atomic::AtomicU64::new(0));
     let files_processed = Arc::new(std::sync::atomic::AtomicUsize::new(0));
 
     let res = match delete_item_type {

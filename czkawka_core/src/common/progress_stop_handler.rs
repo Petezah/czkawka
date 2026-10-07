@@ -1,4 +1,4 @@
-use std::sync::atomic::{AtomicBool, AtomicU64, AtomicUsize};
+use std::sync::atomic::{AtomicBool, AtomicUsize};
 use std::sync::{Arc, atomic};
 use std::thread;
 use std::thread::{JoinHandle, sleep};
@@ -6,6 +6,7 @@ use std::time::{Duration, Instant};
 
 use crossbeam_channel::Sender;
 use fun_time::fun_time;
+use portable_atomic::AtomicU64;
 
 use crate::common::progress_data::{ProgressData, ToolStage};
 pub const LOOP_DURATION: u32 = 20;

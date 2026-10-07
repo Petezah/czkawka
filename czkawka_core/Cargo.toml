@@ -14,6 +14,8 @@ build = "build.rs"
 humansize = "2.1"
 rayon = "1.10"
 crossbeam-channel = "0.5"
+# AtomicU64 for targets without native 64-bit atomics (e.g. armv5te)
+portable-atomic = "1.11"
 
 # For stable iteration over hashmaps.
 indexmap = "2.11"
